@@ -1,81 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style>
-        header,
-        main,
-        footer {
-            padding-left: 300px;
-        }
-
-        @media only screen and (max-width : 992px) {
-
-            header,
-            main,
-            footer {
-                padding-left: 0;
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <header>
-        <nav>
-            <!-- navbar content here  -->
-        </nav>
-
-        <ul id="slide-out" class="sidenav sidenav-fixed">
-            <li>
-                <div class="user-view">
-                    <div class="background">
-                        <img src="/static/images/office.jpg">
-                    </div>
-                    <a href="#user"><img class="circle" src="/static/images/yuna.jpg"></a>
-                    <a href="#name"><span class="white-text name">John Doe</span></a>
-                    <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-                </div>
-            </li>
-            <li><a href="/s3"><i class="material-icons">sd_storage</i> S3</a></li>
-            <li><a href="/about-us"><i class="material-icons">account_box</i>IAM</a></li>
-            <li><a href="/ec2"><i class="material-icons">cloud_queue</i>EC2</a></li>
-        </ul>
-        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </header>
-
-    <main class="">
-        <div class="row">
-            {% for region in regions['Regions'] %}
-            <div class="col s3">
-                <a href="http://localhost:5000/ec2/{{ region['RegionName'] }}">
-                    <div class="card-panel cyan hoverable">
-                        <span class="white-text">
-                            {{ region['RegionName'] }}
-                        </span>
-                    </div>
-                </a>
+{% block content %}
+<div class="row">
+    {% for region in regions['Regions'] %}
+    <div class="col s3">
+        <a href="http://localhost:5000/ec2/{{ region['RegionName'] }}">
+            <div class="card-panel cyan hoverable">
+                <span class="white-text">
+                    {{ region['RegionName'] }}
+                </span>
             </div>
-            {% endfor %}
-        </div>
-    </main>
-
-    <script>
-        $(document).ready(function () {
-            $('.sidenav').sidenav();
-            $('.dropdown-trigger').dropdown();
-            $('.collapsible').collapsible();
-        });
-    </script>
-</body>
-
-</html>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

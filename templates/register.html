@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <form method="post" class="card-panel">
+        <h3 class="center">Register Form</h3>
+        <table border>
+            <tr>
+                <td>Username</td>
+                <td><input type="text" name="username"></td>
+            </tr>
+            <tr>
+                <td>First Name</td>
+                <td><input type="text" name="first_name"></td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td><input type="text" name="last_name"></td>
+            </tr>
+            <tr>
+                <td>Enter Password</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td>Retype Passowrd</td>
+                <td><input type="password" name="re_password"></td>
+            </tr>
+        </table><br>
+        <center>
+            <input class="btn" type="submit">
+        </center>
+    </form>
+    <p class="red-text">Already having account? <a href="/login">Login here</a></p>
+
+    {% if success %}
+    <div style="color: greenyellow;">{{ success }}</div>
+    {% endif %}
+
+    {% if error %}
+    <div style="color: red;">{{ error }}</div>
+    {% endif %}
+</div>
+{% endblock %}

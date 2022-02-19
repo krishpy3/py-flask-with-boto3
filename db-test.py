@@ -25,8 +25,16 @@ cur = conn.cursor()
 # conn.commit()
 
 
-cur.execute('SELECT * FROM movies')
-hello = cur.fetchmany(2)
-print(hello)
-cur.close()
-conn.close()
+# cur.execute('SELECT * FROM movies')
+# hello = cur.fetchmany(2)
+# print(hello)
+# cur.close()
+# conn.close()
+
+
+cur.execute('''CREATE TABLE user (
+    username TEXT NOT NULL,
+    first_name TEXT NOT NULL,
+    last_name TEXT,
+    password TEXT
+)''')

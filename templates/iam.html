@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <ol start="{{(request.args.get('page',0) | int * 10)+1}}">
+        {% for username, family in user_list %}
+        <li>
+            {{ username }} - {{ family }}
+        </li>
+        {% endfor %}
+    </ol>
+
+</div>
+{% endblock %}

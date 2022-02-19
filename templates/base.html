@@ -31,8 +31,8 @@
 
 <body>
     <header>
-        <nav>
-            <!-- navbar content here  -->
+        <nav class="cyan">
+            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </nav>
 
         <ul id="slide-out" class="sidenav sidenav-fixed">
@@ -47,28 +47,21 @@
                 </div>
             </li>
             <li><a href="/s3"><i class="material-icons">sd_storage</i> S3</a></li>
-            <li><a href="/about-us"><i class="material-icons">account_box</i>IAM</a></li>
+            <li><a href="/iam"><i class="material-icons">account_box</i>IAM</a></li>
             <li><a href="/ec2"><i class="material-icons">cloud_queue</i>EC2</a></li>
         </ul>
-        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </header>
 
     <main>
-        <!-- Dropdown Trigger -->
-        <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
-
-        <!-- Dropdown Structure -->
-        <ul id='dropdown1' class='dropdown-content'>
-            <li><a href="/">S3</a></li>
-            <li><a href="/about-us">IAM</a></li>
-            <li><a href="/contact-us">EC2</a></li>
-        </ul>
+        {% block content %}{% endblock %}
     </main>
 
     <script>
         $(document).ready(function () {
             $('.sidenav').sidenav();
             $('.dropdown-trigger').dropdown();
+            $('.collapsible').collapsible();
+            $('.tabs').tabs();
         });
     </script>
 </body>
