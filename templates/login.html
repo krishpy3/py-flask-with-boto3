@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
+
+<body>
+    <!-- <style>
+            .warning {
+                background-color: coral;
+            }
+        
+            .success {
+                background-color: green;
+            }
+        
+            .error {
+                background-color: red;
+            }
+        
+            .white-text {
+                color: white;
+            }
+        </style> -->
+    <div style="background-color:cadetblue">
+        <form class='warning' action="/login" method="post">
+            Username: <input type="text" name='user'><br>
+            Password: <input type="password" name='pass' onkeyup="f()"><br>
+            5+6? : <input type="number" name="verify"><br>
+            <input type="submit" value="ClickME"><br>
+
+            {{ message }}
+        </form>
+        <p class="white-text">Already having account? Login here</p>
+    </div>
+
+    <p class="error white-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi amet nobis eius
+        inventore natus accusamus a,
+        blanditiis corporis consequuntur sint ipsa, officiis eum aspernatur saepe deserunt magni. Minima, reiciendis
+        impedit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolores nam deserunt delectus, rem
+        nisi obcaecati debitis voluptatibus reiciendis voluptate hic suscipit, sunt doloremque quis illum maiores
+        facere!
+        Pariatur, tempore!</p>
+    <p class="success white-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi amet nobis eius
+        inventore natus accusamus a,
+        blanditiis corporis consequuntur sint ipsa, officiis eum aspernatur saepe deserunt magni. Minima, reiciendis
+        impedit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolores nam deserunt delectus, rem
+        nisi obcaecati debitis voluptatibus reiciendis voluptate hic suscipit, sunt doloremque quis illum maiores
+        facere!
+        Pariatur, tempore!</p>
+    <p class="warning">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi amet nobis eius
+        inventore natus accusamus a,
+        blanditiis corporis consequuntur sint ipsa, officiis eum aspernatur saepe deserunt magni. Minima, reiciendis
+        impedit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolores nam deserunt delectus, rem
+        nisi obcaecati debitis voluptatibus reiciendis voluptate hic suscipit, sunt doloremque quis illum maiores
+        facere!
+        Pariatur, tempore!</p>
+</body>
+
+</html>

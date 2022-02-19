@@ -1,0 +1,18 @@
+<html>
+
+<head></head>
+
+<body>
+    <p>Hello <b>{{ n }}</b> </p>
+
+    <h4>List of services</h4>
+    <ol>
+        {% for i in services %}
+        {% if 's' in i %}
+        <li>{{ i }}</li>
+        {% endif %}
+        {% endfor %}
+    </ol>
+</body>
+
+</html>
